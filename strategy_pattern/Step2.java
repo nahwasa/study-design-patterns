@@ -1,9 +1,11 @@
 package strategy_pattern;
 
-public class Step1 {
+public class Step2 {
 
     /**
-     * 기본 형태
+     * 일부 Duck들만 fly()를 추가하려고 하는데
+     * Duck에 추가했더니 당연히 전부 적용되버림.
+     * 러버덕은 날면 안되니깐 아무것도 안하게 오버라이드.
      */
 
     class Duck {
@@ -17,6 +19,10 @@ public class Step1 {
 
         public void display() {
             System.out.println("Display!");
+        }
+
+        public void fly() {
+            System.out.println("Fly!");
         }
     }
 
@@ -43,6 +49,11 @@ public class Step1 {
         @Override
         public void display() {
             System.out.println("RubberDuck display!");
+        }
+
+        @Override
+        public void fly() {
+            // do nothing
         }
     }
 }
